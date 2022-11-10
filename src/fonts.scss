@@ -1,0 +1,222 @@
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 52px;
+    color: var(--text-color);
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    color: var(--text-color);
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+    color: var(--text-color);
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--text-color);
+}
+
+h5 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: var(--text-color);
+}
+
+h6 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--text-color);
+}
+
+@mixin text-regular {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--text-color);
+    @media screen and (max-width: 640px) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@mixin link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--text-color);
+    transition: all 200ms;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+        & path {
+            fill: var(--tooltip-bg-color);
+        }
+    }
+    &:active {
+        color: var(--accent-color);
+        opacity: 0.5;
+        & path {
+            fill: var(--tooltip-bg-color);
+        }
+    }
+}
+
+@mixin text-italic {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--text-color);
+}
+
+@mixin text-medium {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--text-color);
+}
+
+@mixin link-medium {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: var(--accent-color);
+    transition: 200ms;
+    &:hover {
+        opacity: 0.5;
+    }
+    &:active {
+        opacity: 0.5;
+    }
+    @media screen and (max-width: 640px) {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+@mixin label-big {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--label-color);
+    @media screen and (max-width: 640px) {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@mixin label-small {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--label-color);
+}
+
+@mixin tag {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--text-color);
+}
+
+@mixin clickable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--tag-search-bg-color);
+    transition: all 200ms;
+    color: var(--text-color);
+    &:hover {
+        background: var(--accent-bg-color);
+        color: var(--accent-color);
+        & path {
+            fill: var(--accent-color);
+        }
+    }
+    &:focus {
+        background: var(--accent-bg-color);
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        & path {
+            fill: var(--accent-color);
+        }
+    }
+    &:active {
+        background: var(--accent-bg-color);
+        color: var(--accent-color);
+        border-color: transparent;
+        & path {
+            fill: var(--accent-color);
+        }
+        opacity: 0.5;
+    }
+}
+
+@mixin bg-link {
+    @include clickable;
+    @include link;
+    width: fit-content;
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 4px;
+    background: var(--accent-bg-color);
+    color: var(--accent-color);
+    &:hover,
+    &:focus {
+        background: var(--accent-bg-hover-color);
+        color: var(--accent-color);
+    }
+}
+
+// 320+
+@media screen and (max-width: 640px) {
+    h1 {
+        font-size: 32px;
+        line-height: 46px;
+    }
+    h2 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+    h3 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    h4 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    h5 {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    h6 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    text-regular {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    link-medium{
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

@@ -1,0 +1,66 @@
+@import '../../vars.scss';
+@import '../../fonts.scss';
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.redaction{
+    &__container{
+        width: 930px;
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
+    &__title{
+        margin-bottom: 40px;
+    }
+    &__gap{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0px 30px;
+        margin-bottom: 40px;
+        border-bottom: solid 1px var(--line-color);
+        padding-bottom: 40px;
+        &__item{
+            width: 290px;
+            &__title{
+                margin-bottom: 5px;
+            }
+            &__text{
+                @include text-regular;
+            }
+        }
+    }
+    &__gap:last-child{
+        margin-bottom: 0px;
+        border-bottom: none;
+        padding-bottom: 0px;
+    }
+}
+
+@media (max-width: 959px) {
+    .redaction{
+        &__gap{
+            &__item{
+                margin-bottom: 30px;
+            }
+            &__item:last-child{
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+@media (max-width: 639px) {
+    .redaction__container{
+        margin-bottom: 80px;
+    }
+    .redaction__gap{
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+    .redaction__gap__item{
+        margin-bottom: 20px;
+    }
+}

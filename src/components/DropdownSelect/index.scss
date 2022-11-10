@@ -1,0 +1,276 @@
+@import '../../fonts.scss';
+@import "rsuite/dist/rsuite.css";
+
+.rs-picker {
+    display: none;
+}
+
+.rs-picker-daterange-header,
+.rs-picker-daterange-menu .rs-picker-daterange-panel-show-one-calendar .rs-picker-toolbar {
+    display: none;
+}
+
+.rs-picker-daterange-menu .rs-calendar {
+    padding-bottom: 16px;
+}
+
+.rs-picker-menu {
+    top: 48px !important;
+    left: 0 !important;
+    border: 1px solid var(--label-color);
+    border-radius: 8px !important;
+}
+
+// day
+.rs-picker-menu .rs-calendar .rs-calendar-table-cell {
+    width: 31px;
+    height: 31px;
+    padding: 0;
+    border-radius: 4px;
+    & .rs-calendar-table-cell-content {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+    }
+    &:hover {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--accent-color) !important;
+        background-color: transparent !important;
+        & .rs-calendar-table-cell-content {
+            background-color: transparent !important;
+        }
+    }
+
+    &-selected {
+        background: var(--accent-color) !important;
+        border-radius: 4px 0px 0px 4px !important;
+        & .rs-calendar-table-cell-content {
+            background-color: transparent !important;
+            & .rs-calendar-table-cell-day {
+                color: #fff !important;
+            }
+        }
+        &:hover {
+            background: var(--accent-color) !important;
+            opacity: 0.7;
+            & .rs-calendar-table-cell-content {
+                background-color: transparent !important;
+                & .rs-calendar-table-cell-day {
+                    color: #fff !important;
+                }
+            }
+        }
+        &-end {
+            border-radius: 0px 4px 4px 0px !important;
+        }
+    }
+
+    &-in-range {
+        &::before {
+            all: unset;
+        }
+        background: var(--accent-bg-color) !important;
+        border-radius: 0;
+        &:hover {
+            background: var(--accent-color) !important;
+            border-radius: 0px 4px 4px 0px !important;
+            & .rs-calendar-table-cell-content {
+                background-color: transparent !important;
+                & .rs-calendar-table-cell-day {
+                    color: #fff !important;
+                }
+            }
+        }
+    }
+
+    &-disabled {
+        &:hover {
+            border: none !important;
+        }
+        & .rs-calendar-table-cell-content  {
+            text-decoration: none;
+            cursor: default;
+            & .rs-calendar-table-cell-day {
+                color: var(--label-color) !important;
+            }
+        }
+        
+    }
+
+    &-is-today {
+        & .rs-calendar-table-cell-content {
+            box-shadow: none;
+        }
+    }
+}
+
+.dates_selected .rs-picker-menu .rs-calendar .rs-calendar-table-cell {
+    &-in-range {
+        &::before {
+            all: unset;
+        }
+        background: var(--accent-bg-color) !important;
+        &:hover {
+            background-color: transparent !important;
+            border-radius: 4px !important;
+            & .rs-calendar-table-cell-content {
+                background-color: transparent !important;
+                background-color: transparent !important;
+                & .rs-calendar-table-cell-day {
+                    color: #222 !important;
+                }
+            }
+        }
+    }
+}
+
+// days of the week
+.rs-picker-menu .rs-calendar .rs-calendar-table-header-row {
+    background: #F9FAFC;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 8px;
+    color: var(--dark-label-color);
+    & .rs-calendar-table-cell {
+        width: 31px;
+        height: 31px;
+        border-radius: 0 !important;
+        & .rs-calendar-table-cell-content {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &:hover {
+            border: none !important;    
+            & .rs-calendar-table-cell-content {
+                color: var(--dark-label-color) !important;
+                opacity: 1;
+                cursor: default;
+            }
+        }
+    }
+}
+
+.rs-calendar-table-cell-day {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #222222;
+}
+
+// mounth
+.rs-btn-subtle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--accent-color);
+}
+
+.rs-calendar-header-has-month:not(.rs-calendar-header-has-time) .rs-calendar-header-backward,
+.rs-calendar-header-has-month:not(.rs-calendar-header-has-time) .rs-calendar-header-forward {
+    float: none !important;
+}
+
+.dropdown_select {
+    position: relative;
+    &_input {
+        position: relative;
+
+        & input {
+            width: 230px;
+            height: 44px;
+            background: #FFFFFF;
+            border: 1px solid var(--line-color);
+            border-radius: 8px;
+            cursor: pointer;
+            padding: 12px 8px 12px 16px;
+            @include text-regular;
+            font-size: 16px;
+            transition: all 200ms;
+            &:hover {
+                border: 1px solid var(--label-color);
+                background: var(--tag-search-bg-color);
+            }
+            &:focus {
+                border: 1px solid var(--accent-color);
+            }
+        }
+    }
+
+    &__options_btn {
+        width: 20px;
+        height: 20px;
+        transition: all 200ms;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 8px;
+        top: 12px;
+    
+        &_active {
+            transform: rotate(180deg);
+            & path {
+                fill: var(--accent-color);
+            }
+        }
+    }
+    
+    &__options {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 230px;
+        border: 1px solid var(--label-color);
+        border-radius: 8px;
+        padding: 8px 0;
+        transition: all 200ms;
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        left: 0;
+        margin-top: 4px;
+        z-index: 2;
+    
+        &_active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+    }
+
+    &__option {
+        padding: 12px 12px 12px 16px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 200ms;
+        @include text-regular;
+
+        &:hover {
+            background: var(--accent-bg-color);
+        }
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .dropdown_select {
+        &_input {    
+            & input {
+                font-size: 16px;
+
+            }
+        }
+    }
+}

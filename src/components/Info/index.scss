@@ -1,0 +1,45 @@
+@import '../../vars.scss';
+@import '../../fonts.scss';
+
+.info__container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.info__container__text{
+    margin-top: 40px;
+    max-width: 930px;
+    margin-bottom: 100px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.info__title{
+    margin-bottom: 20px;
+}
+.info__subtitle{
+    margin-bottom: 20px;
+}
+.info__container__text{
+    @include text-regular;
+}
+.info__text{
+    margin-bottom: 20px;
+}
+.info__text:last-child{
+    margin-bottom: 0px;
+}
+
+@media (max-width: 639px) {
+    .info__title{
+        font-size: 28px;
+        line-height: 40px;
+    }
+    .info__subtitle{
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .info__text{
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

@@ -1,0 +1,172 @@
+@import '../../vars.scss';
+@import '../../fonts.scss';
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+}
+
+.profile{
+    &__container{
+        width: 930px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
+    &__title{
+        margin-bottom: 40px;
+    }
+    &__info{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+        &__left{
+            width: 300px;
+            padding: 20px 25px;
+            border: 1px solid var(--line-color);
+            border-radius: 12px;
+            &__text{
+                padding-bottom: 12px;
+                border-bottom: 1px solid var(--line-color);
+                word-wrap: break-word;
+                &-title{
+                    margin-bottom: 4px;
+                }
+                &-email{
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                    color: #1D1D1D;
+                }
+            }
+            &__btn-logout{
+                @include link-medium;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+                margin-top: 12px;
+            }
+        }
+        &__right{
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            &__profile-picture{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &__photo{
+                    width: 100px;
+                    height: 100px;
+                    margin-bottom: 6px;
+                }
+                &__photo img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+                &__btn-change{
+                    @include link-medium;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+            &__form{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                &__input{
+                    width: 320px;
+                    height: 44px;
+                    padding: 12px 8px 12px 16px;
+                    background: var(--white-color);
+                    border: 1px solid var(--line-color);
+                    border-radius: 8px;
+                    @include text-regular;
+                    font-size: 14px;
+                    line-height: 20px;
+                    &__error{
+                        border: 1px solid red;
+                    }
+                }
+                &__input::placeholder{
+                    color: var(--label-color);
+                }
+                &__submit{
+                    height: 44px;
+                    background: var(--accent-color);
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    cursor: pointer;
+                    transition: all 200ms;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: var(--white-color);
+                    &:hover,
+                    &:focus {
+                        background: var(--tooltip-bg-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.input__hidden{
+    display: none;
+}
+
+@media screen and (max-width: 979px) {
+    .profile__container{
+        width: 610px;
+    }
+    .profile__info{
+        gap: 20px;
+    }
+    .profile__info__right{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        &__form__input{
+            width: 290px;
+        }
+    }
+}
+
+@media screen and (max-width: 639px) {
+    .profile__container{
+        width: 290px;
+        margin-bottom: 80px;
+    }
+    .profile__info{
+        flex-direction: column;
+    }
+    .profile__info__left{
+        min-width: 290px;
+    }
+    .profile__info__right{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        &__form__input{
+            width: 290px;
+        }
+    }
+}
+
+.profile__login_form_error_psw{
+    @include text-regular;
+    line-height: 1.3;
+    font-size: 11px;
+    text-align: center;
+    color: red;
+    margin: -10px 0;
+}

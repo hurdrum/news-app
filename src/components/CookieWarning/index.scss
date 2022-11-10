@@ -1,0 +1,81 @@
+@import '../../fonts.scss';
+
+.cookie_warning {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 15;
+    background: var(--accent-color);
+    transition: all 200ms;
+    &_hidden {
+        opacity: 0;
+    }
+    &__content {
+        max-width: 1100px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: 15px;
+    }
+    &__icon {
+        margin-right: 20px;
+    }
+    &__text {
+        @include text-regular;
+        color: #fff;
+        max-width: 731px;
+        margin-right: 30px;
+        & a {
+            color: #FFF61A;
+            transition: all 200ms;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__accept,
+    &__cancel {
+        width: 119px;
+        height: 44px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include label-big;
+        color: #fff;
+        cursor: pointer;
+        transition: all 200ms;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    &__accept {
+        background: #FFF61A;
+        color: #222;
+    }
+    &__cancel {
+        border: 1px solid #FFFFFF;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .cookie_warning {
+        &__content {
+            row-gap: 10px;
+        }
+        &__accept,
+        &__cancel {
+            width: 100px;
+            height: 34px;
+        }
+    }
+}

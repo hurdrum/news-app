@@ -1,0 +1,31 @@
+@import '../../vars.scss';
+@import '../../fonts.scss';
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.aboutus{
+    &__container{
+        max-width: 930px;
+        margin-top: 40px;
+        margin-bottom: 100px;
+    }
+    &__title{
+    margin-bottom: 20px;    
+    }
+    &__subtitle{
+        margin-bottom: 20px;    
+    }
+    &__text{
+        margin-top: 20px;
+        margin-bottom: 20px; 
+        @include text-regular;  
+    }
+    &__text:last-child{
+        margin-bottom: 0px;    
+    }
+}

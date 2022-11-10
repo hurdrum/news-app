@@ -1,0 +1,31 @@
+@import '../../vars.scss';
+@import '../../fonts.scss';
+
+.img-container{
+    width: 600px;
+    height: 370px;
+    border-radius: 12px;
+}
+.img-item{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.img-description{
+    @include label-big;
+    font-size: 14px;
+    margin-top: 12px;
+    // margin-bottom: 20px;
+}
+
+figure {
+    width: fit-content;
+}
+
+@media (max-width: 639px) {
+    .img-container{
+        width: 290px;
+        height: 175px;
+    }
+}
